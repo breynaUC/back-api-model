@@ -1,14 +1,12 @@
 package uc.us_security.entity;
 
 import java.io.Serializable;
-import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -19,18 +17,17 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name="roles")
-public class Rol implements Serializable{
+@Table(name="posts")
+public class Post implements Serializable{
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = -3490423452440544278L;
+	private static final long serialVersionUID = -1457358047095434317L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="idrol")
+	@Column(name="idpost")
 	private int id;
-	@Column(unique = true)
-	private String nombre;
-	@ManyToMany(mappedBy = "roles")
-	private List<Usuario> usuarios;
+	private String titulo;
+	private String descripcion;
+
 }
