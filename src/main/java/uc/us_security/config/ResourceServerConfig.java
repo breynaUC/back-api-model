@@ -2,8 +2,6 @@ package uc.us_security.config;
 
 import java.util.Arrays;
 
-import javax.persistence.criteria.Order;
-
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -46,6 +44,5 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter{
 		FilterRegistrationBean<CorsFilter> bean = new FilterRegistrationBean<CorsFilter>(new CorsFilter(corsConfigurationSource()));
 		bean.setOrder(Ordered.HIGHEST_PRECEDENCE);
 		return bean;
-	}
-	
+	}	
 }
