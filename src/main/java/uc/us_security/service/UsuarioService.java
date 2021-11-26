@@ -27,7 +27,6 @@ public class UsuarioService implements UserDetailsService{
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		// TODO Auto-generated method stub
 		Usuario usuario = usuariorepository.findByUsername(username);
-		System.out.println("Hola: "+username);
 		List<GrantedAuthority> authorities = usuario.getRoles()
 				.stream()
 				.map(role ->new SimpleGrantedAuthority(role.getNombre()))
